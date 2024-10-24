@@ -142,7 +142,7 @@ class TabMainTask2(QWidget):
 
         # UI элементы
         testTaskLayout = LatexRendererLayout()
-        texTask1 = r"$\frac{d^2 u}{dx^2} + a^2 \sin(u) + b \sin(x) = 0$"
+        texTask1 = r"$\frac{d^2 u}{dx^2} + a\frac{du}{dx} + b \sin(u) = 0$"
         testTaskLayout.render(texTask1)
         self.mainLayout.addLayout(testTaskLayout, 1)
 
@@ -284,7 +284,7 @@ class TabMainTask2(QWidget):
         layout.addWidget(table)
 
         if self.to_be_control_local_error:
-            self.columns = ['x', 'u', 'u\'', 'u2i', 'u\'2i', 'u-u2i', 'u\'-u\'2i', 'h', 'e', 'e_v', 'e_v\'',
+            self.columns = ['x', 'u', 'u2i', 'u\'', 'u\'2i', 'u-u2i', 'u\'-u\'2i', 'h', 'e', 'e_v', 'e_v\'',
                             'c1', 'c2']  # Замена 'E' на 'e'
             self.data = self.df.values.tolist()[1:]  # Данные для таблицы
         else:
@@ -353,8 +353,8 @@ class TabMainTask2(QWidget):
             file_path = os.path.join(current_dir, 'output_2.csv')
             if to_be_control_local_error:
                 self.df = pd.read_csv(file_path, delimiter=";", header=None,
-                                 names=['x', 'u', 'u2i', 'u\'', 'u\'2i', 'u-u2i', 'u\'-u\'2i', 'h', 'e', 'e_v',
-                                        'e_v\'', 'c1', 'c2'])  # Замена 'E' на 'e'
+                                 names=['x', 'u', 'u2i', 'u\'', 'u\'2i', 'u-u2i', 'u\'-u\'2i', 'h', 'e', 'e_v', 'e_v\'',
+                            'c1', 'c2'])  # Замена 'E' на 'e'
             else:
                 self.df = pd.read_csv(file_path, delimiter=";", header=None, names=['x', 'u', 'u\''])
         except Exception as e:

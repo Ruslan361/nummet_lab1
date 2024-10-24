@@ -1,0 +1,25 @@
+{
+    "initialConditions": {
+        "X0": "0",
+        "UX0": "1",
+        "DUX0": "0"
+    },
+    "xlimits": {
+        "endX": "10",
+        "epsilonBorder": "1e-7"
+    },
+    "numericalIntegrationParameters": {
+        "h0": "1e-3",
+        "controlLocalError": true,
+        "epsilon": "1e-7",
+        "to_be_control_local_error": true
+    },
+    "abinput": {
+        "a": "0",
+        "b": "10"
+    },
+    "amountOfSteps": "10000",
+    "selectedGraph": "u - u'(x)",
+    "csv_filename": "center.csv",
+    "task_number": 2
+}
