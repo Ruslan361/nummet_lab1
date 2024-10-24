@@ -38,6 +38,7 @@ class GraphLayout(QVBoxLayout):
 
     def draw(self):
         self.canvas.Draw()
+        self.checkStateChangedLogScaleComboBox()
     def legend(self):
         self.canvas.ax.legend()
 
